@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlazeFix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/resources/style-2.css">
+
+     <link
+     rel="stylesheet"
+     data-purpose="Layout StyleSheet"
+     title="Web Awesome"
+     href="/css/app-wa-8fd54642150959ca86965e194f04945a.css?vsn=d"
+   >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css"
+     >
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" id="logo">
+                <i id="fire-icon" class="fa-thin fa-fire-flame-curved"></i>
+                BlazeFix
+            </a>
+
+            <!-- Menu for larger screens -->
+            <div id="nav-links" class="hidden md:flex space-x-6">
+                <a href="Prediction.html" class="nav-link">Predictions</a>
+                <a href="live.html" class="nav-link">Live Map</a>
+                <a href="Analytics.html" class="nav-link">Analytics</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+
+            <!-- Get Started Button -->
+            <div class="hidden md:flex">
+                <a href="contact.html" id="get-started">Contact us</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg id="menu-icon" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="white">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu">
+            <a href="Prediction.html" class="nav-link block py-2">Predictions</a>
+            <a href="live.html" class="nav-link block py-2">Live Map</a>
+            <a href="Analytics.html" class="nav-link block py-2">Analytics</a>
+            <a href="about.html" class="nav-link block py-2">About</a>
+            <div class="mt-4">
+                <a href="contact.html" id="get-started" class="block text-center">Contact us</a>
+            </div>
+        </div>
+    </nav>
+    <!-- nav-bar ends -->
+
+
+<!-- 
+contact form starts -->
+<section class="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mb-4">
+                    Contact Us
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl relative overflow-hidden">
+                    <!-- Fire Icon (Centered, Larger, Slightly Darker) -->
+                    <div class="absolute inset-0 flex items-center justify-center text-orange-500 opacity-50 text-[25rem]">
+                        <i class="fa-sharp fa-thin fa-fire-flame-curved"></i>
+                    </div>
+                    <!-- Form Content -->
+                    <h3 class="text-2xl font-semibold text-white mb-6 relative z-10">Send Us a Message</h3>
+                    <form id="contact-form" action="https://formsubmit.co/d014e2141879151be6a422c9069ae25b" method="POST" class="relative z-10">
+                        <!-- Hidden Fields -->
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> 
+                        <input type="hidden" name="_subject" value="New Contact Form Submission">
+                        <input type="hidden" name="_captcha" value="false">  
+                    
+                        <!-- Name Field -->
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-300 text-sm mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-orange-500 text-white" placeholder="Enter your name" required>
+                        </div>
+                    
+                        <!-- Email Field -->
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-300 text-sm mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-orange-500 text-white" placeholder="Enter your email" required>
+                        </div>
+                    
+                        <!-- Message Field -->
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 text-sm mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-orange-500 text-white" placeholder="Enter your message" required></textarea>
+                        </div>
+                    
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (Initially Hidden) -->
+                    <div id="success-message" class="hidden text-green-500 mt-4">Your message has been sent successfully!</div>
+                    
+                    <script>
+                    document.getElementById("contact-form").addEventListener("submit", function(event) {
+                        event.preventDefault(); // Prevent form from redirecting
+                    
+                        let form = this;
+                        let formData = new FormData(form);
+                    
+                        fetch(form.action, {
+                            method: "POST",
+                            body: formData,
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                document.getElementById("success-message").classList.remove("hidden"); 
+                                form.reset(); // Reset form fields
+                            } else {
+                                alert("There was an error submitting your message. Please try again.");
+                            }
+                        })
+                        .catch(error => {
+                            alert("Something went wrong. Please check your internet connection.");
+                        });
+                    });
+                    </script>
+                    
+                    
+                    
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl relative overflow-hidden">
+                    <div class="absolute -top-8 -right-8 text-orange-500 opacity-20">
+                        <i class="fas fa-fire text-9xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="text-orange-500 text-2xl">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Address</h4>
+                                    <p class="text-gray-300">VIT Bhopal University, Kothri Kalan, Sehore, Madhya Pradesh - 466114, India</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-orange-500 text-2xl">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Email</h4>
+                                    <p class="text-gray-300">blazefix4@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-orange-500 text-2xl">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Phone</h4>
+                                    <p class="text-gray-300">+91 98XXXXXXX0</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.5358693949966!2d76.8512871!3d23.077471499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397ce9ceaaaaaaab%3A0xa224b6b82b421f83!2sVIT%20Bhopal%20University!5e0!3m2!1sen!2sin!4v1742714807810!5m2!1sen!2sin" 
+                                class="w-full h-64 rounded-lg border-0" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 
+    contact form ends -->
+
+    <!-- footer starts -->
+    <footer class="bg-gray-900 text-gray-300 py-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center space-x-2">
+                    <a href="#" id="logo" class="text-orange-500 text-2xl flex items-center ">
+                        <i id="fire-icon" class="fa-thin fa-fire-flame-curved"></i>
+                        <span class="text-xl font-semibold text-white">BlazeFix</span>
+                    </a>
+                </div>
+                <p class="mt-2 text-sm max-w-xs">Advanced forest fire prediction and prevention through AI technology.</p>
+               
+            </div>
+            
+            <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-white font-semibold mb-3">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/" class="hover:text-white">Home</a></li>
+                    <li><a href="Prediction.html" class="hover:text-white">Predictions</a></li>
+                    <li><a href="live.html" class="hover:text-white">Live Map</a></li>
+                    <li><a href="Analytics.html" class="hover:text-white">Analytics</a></li>
+                    <li><a href="about.html" class="hover:text-white">About</a></li>
+                    <li><a href="contact.html" class="hover:text-white">Contact us</a></li>
+                </ul>
+            </div>
+    
+            <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-white font-semibold mb-3">Contact Us</h3>
+                <p class="text-sm text-gray-400">
+                    VIT Bhopal University<br>
+                    Bhopal-Indore Highway, Kothrikalan,<br>
+                    Sehore, Madhya Pradesh – 466114, India
+                </p>
+                <a href="https://vitbhopal.ac.in/" target="_blank" class="text-orange-400 hover:text-white mt-2 text-sm">
+                    Visit VIT Bhopal Website
+                </a>
+            </div>
+            
+            
+    
+            <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-white font-semibold mb-3">Stay Connected</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 hover:text-orange-400">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2  hover:text-orange-400">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2  hover:text-orange-400">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2  hover:text-orange-400">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            
+        </div>
+    
+        <div class="max-w-7xl mx-auto mt-10 border-t border-gray-700 pt-5 flex flex-col md:flex-row items-center justify-between text-sm text-center md:text-left">
+            <p>© 2025 BlazeFix. All rights reserved.</p>
+            <div class="flex space-x-4 mt-2 md:mt-0">
+                <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    <!-- footer ends -->
+
+<script src="/resources/script.js"></script>
+</body>
+</html>

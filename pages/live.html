@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlazeFix - Live Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="/resources/style-2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css">
+</head>
+<body style="margin: 0; padding: 0;">
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" id="logo">
+                <i id="fire-icon" class="fa-thin fa-fire-flame-curved"></i>
+                BlazeFix
+            </a>
+
+            <!-- Menu for larger screens -->
+            <div id="nav-links" class="hidden md:flex space-x-6">
+                <a href="Prediction.html" class="nav-link">Predictions</a>
+                <a href="live.html" class="nav-link">Live Map</a>
+                <a href="Analytics.html" class="nav-link">Analytics</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+
+            <!-- Get Started Button -->
+            <div class="hidden md:flex">
+                <a href="contact.html" id="get-started">Contact us</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg id="menu-icon" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="white">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu">
+            <a href="Prediction.html" class="nav-link block py-2">Predictions</a>
+            <a href="live.html" class="nav-link block py-2">Live Map</a>
+            <a href="Analytics.html" class="nav-link block py-2">Analytics</a>
+            <a href="about.html" class="nav-link block py-2">About</a>
+            <div class="mt-4">
+                <a href="contact.html" id="get-started" class="block text-center">Contact us</a>
+            </div>
+        </div>
+    </nav>
+    <!-- nav-bar ends -->
+
+    <!-- Map Container -->
+    <div id="map" style="height: 100vh;"></div>
+
+    <script>
+        // API Keys
+        const WEATHER_API_KEY = 'a7ad55f38f474e1992d150328252203'; // WeatherAPI Key
+        const OPENCAGE_API_KEY = '5332a17920ac4753be126570aee75e39'; // OpenCage API Key
+
+        // Initialize the Map
+        const map = L.map('map').setView([20, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Function to fetch weather data from WeatherAPI
+        async function fetchWeatherData(lat, lon) {
+            const url = `https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${lat},${lon}`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Failed to fetch weather data');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                return null;
+            }
+        }
+
+        // Function to fetch location name from OpenCage Geocoding API
+        async function fetchLocationName(lat, lon) {
+            const url = `https://api.opencagedata.com/geocode/v1/json?key=${OPENCAGE_API_KEY}&q=${lat},${lon}`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Failed to fetch location name');
+                const data = await response.json();
+                return data.results[0]?.formatted || 'Unknown Location';
+            } catch (error) {
+                console.error('Error fetching location name:', error);
+                return 'Unknown Location';
+            }
+        }
+
+        // Function to add a marker with weather data
+        async function addMarker(lat, lon) {
+            const weatherData = await fetchWeatherData(lat, lon);
+            const locationName = await fetchLocationName(lat, lon);
+
+            if (weatherData) {
+                const temp = weatherData.current.temp_c; // Temperature in Celsius
+                const condition = weatherData.current.condition.text; // Weather condition
+                const icon = weatherData.current.condition.icon; // Weather icon
+
+                // Determine marker color based on temperature
+                const color = getTemperatureColor(temp);
+
+                // Create a custom icon
+                const customIcon = L.divIcon({
+                    className: 'custom-icon',
+                    html: `
+                        <div style="background-color: ${color}; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            ${Math.round(temp)}°C
+                        </div>
+                    `,
+                    iconSize: [24, 24],
+                });
+
+                // Add marker to the map
+                const marker = L.marker([lat, lon], { icon: customIcon }).addTo(map);
+                marker.bindPopup(`
+                    <b>${locationName}</b><br>
+                    Temp: ${temp}°C<br>
+                    Condition: ${condition}<br>
+                    <img src="https:${icon}" alt="${condition}">
+                `);
+            }
+        }
+
+        // Function to determine marker color based on temperature
+        function getTemperatureColor(temp) {
+            if (temp < 0) return "blue";
+            if (temp < 15) return "green";
+            if (temp < 30) return "yellow";
+            return "red";
+        }
+
+        // Add markers for predefined locations
+        const locations = [
+            { lat: 51.5074, lon: -0.1278 }, // London
+            { lat: 40.7128, lon: -74.0060 }, // New York
+            { lat: 35.6762, lon: 139.6503 }, // Tokyo
+            { lat: 37.7749, lon: -122.4194 }, // San Francisco
+            { lat: 34.0522, lon: -118.2437 }, // Los Angeles
+        ];
+
+        locations.forEach(location => {
+            addMarker(location.lat, location.lon);
+        });
+
+        // Add a marker on map click
+        map.on('click', async (e) => {
+            const { lat, lng } = e.latlng;
+            addMarker(lat, lng);
+        });
+    </script>
+</body>
+</html>

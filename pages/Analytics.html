@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlazeFix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/resources/style-2.css">
+
+     <link
+     rel="stylesheet"
+     data-purpose="Layout StyleSheet"
+     title="Web Awesome"
+     href="/css/app-wa-8fd54642150959ca86965e194f04945a.css?vsn=d"
+   >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css"
+     >
+
+     <link
+       rel="stylesheet"
+       href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css"
+     >
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" id="logo">
+                <i id="fire-icon" class="fa-thin fa-fire-flame-curved"></i>
+                BlazeFix
+            </a>
+
+            <!-- Menu for larger screens -->
+            <div id="nav-links" class="hidden md:flex space-x-6">
+                <a href="Prediction.html" class="nav-link">Predictions</a>
+                <a href="live.html" class="nav-link">Live Map</a>
+                <a href="Analytics.html" class="nav-link">Analytics</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+
+            <!-- Get Started Button -->
+            <div class="hidden md:flex">
+                <a href="contact.html" id="get-started">Contact us</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg id="menu-icon" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="white">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu">
+            <a href="Prediction.html" class="nav-link block py-2">Predictions</a>
+            <a href="live.html" class="nav-link block py-2">Live Map</a>
+            <a href="Analytics.html" class="nav-link block py-2">Analytics</a>
+            <a href="about.html" class="nav-link block py-2">About</a>
+            <div class="mt-4">
+                <a href="contact.html" id="get-started" class="block text-center">Contact us</a>
+            </div>
+        </div>
+    </nav>
+    <!-- nav-bar ends -->
+
+
+
+  <!-- Analytics Page starts -->
+<section class="py-24 bg-gradient-to-br from-gray-900 to-gray-800">
+    <div class="container mx-auto px-6 md:px-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-orange-400 text-center mb-12">
+            Analytics Dashboard
+        </h2>
+
+<!-- Key Metrics -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+    <!-- Temperature -->
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+        <h3 class="text-xl font-semibold text-white mb-2">Temperature</h3>
+        <p id="temperature" class="text-3xl text-orange-500">--</p>
+    </div>
+    <!-- Humidity -->
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+        <h3 class="text-xl font-semibold text-white mb-2">Humidity</h3>
+        <p id="humidity" class="text-3xl text-orange-500">--</p>
+    </div>
+    <!-- Wind Speed -->
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+        <h3 class="text-xl font-semibold text-white mb-2">Wind Speed</h3>
+        <p id="windSpeed" class="text-3xl text-orange-500">--</p>
+    </div>
+    <!-- Weather Condition -->
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg text-center">
+        <h3 class="text-xl font-semibold text-white mb-2">Condition</h3>
+        <p id="weatherCondition" class="text-3xl text-orange-500">--</p>
+    </div>
+</div>
+
+<div class="bg-gray-800 p-8 rounded-xl shadow-2xl mb-12 text-white">
+    <h3 class="text-2xl font-semibold text-orange-300 mb-6">Fire Risk Map</h3>
+    <div class="h-96 rounded-lg overflow-hidden">
+        <iframe id="fireRiskMap" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+
+
+
+        <!-- Trends and Patterns -->
+        <div class="bg-gray-800 p-8 rounded-xl shadow-2xl mb-12">
+            <h3 class="text-2xl font-semibold text-white mb-6">Fire Trends Over Time</h3>
+            <div class="h-96">
+                <!-- Line Chart -->
+                <canvas id="fireTrendsChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Predictive Analytics -->
+        <div class="bg-gray-800 p-8 rounded-xl shadow-2xl mb-12">
+            <h3 class="text-2xl font-semibold text-white mb-6">Fire Risk Forecast</h3>
+            <div class="h-96">
+                <!-- Bar Chart -->
+                <canvas id="riskForecastChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Environmental Factors -->
+        <div class="bg-gray-800 p-8 rounded-xl shadow-2xl mb-12">
+            <h3 class="text-2xl font-semibold text-white mb-6">Environmental Factors</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Temperature Trends -->
+                <div class="bg-gray-700 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold text-white mb-4">Temperature Trends</h4>
+                    <div class="h-64">
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+                </div>
+                <!-- Rainfall Data -->
+                <div class="bg-gray-700 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold text-white mb-4">Rainfall Data</h4>
+                    <div class="h-64">
+                        <canvas id="rainfallChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-Time Alerts -->
+        <div class="bg-gray-800 p-8 rounded-xl shadow-2xl mb-12">
+            <h3 class="text-2xl font-semibold text-white mb-6">Real-Time Alerts</h3>
+            <div class="space-y-4">
+                <!-- Alert 1 -->
+                <div class="bg-red-900 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <h4 class="text-lg font-semibold text-white">High Fire Risk Detected</h4>
+                        <p class="text-gray-300">Region: Green Valley</p>
+                    </div>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300">
+                        View Details
+                    </button>
+                </div>
+                <!-- Alert 2 -->
+                <div class="bg-orange-900 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <h4 class="text-lg font-semibold text-white">Moderate Fire Risk Detected</h4>
+                        <p class="text-gray-300">Region: Forest Hills</p>
+                    </div>
+                    <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition duration-300">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Analytics Page ends -->
+
+    <!-- footer starts -->
+    <footer class="bg-gray-900 text-gray-300 py-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center space-x-2">
+                    <a href="#" id="logo" class="text-orange-500 text-2xl flex items-center ">
+                        <i id="fire-icon" class="fa-thin fa-fire-flame-curved"></i>
+                        <span class="text-xl font-semibold text-white">BlazeFix</span>
+                    </a>
+                </div>
+                <p class="mt-2 text-sm max-w-xs">Advanced forest fire prediction and prevention through AI technology.</p>
+               
+            </div>
+            
+            <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-white font-semibold mb-3">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/" class="hover:text-white">Home</a></li>
+                    <li><a href="Prediction.html" class="hover:text-white">Predictions</a></li>
+                    <li><a href="live.html" class="hover:text-white">Live Map</a></li>
+                    <li><a href="Analytics.html" class="hover:text-white">Analytics</a></li>
+                    <li><a href="about.html" class="hover:text-white">About</a></li>
+                    <li><a href="contact.html" class="hover:text-white">Contact us</a></li>
+                </ul>
+            </div>
+    
+            <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-white font-semibold mb-3">Contact Us</h3>
+                <p class="text-sm text-gray-400">
+                    VIT Bhopal University<br>
+                    Bhopal-Indore Highway, Kothrikalan,<br>
+                    Sehore, Madhya Pradesh – 466114, India
+                </p>
+                <a href="https://vitbhopal.ac.in/" target="_blank" class="text-orange-400 hover:text-white mt-2 text-sm">
+                    Visit VIT Bhopal Website
+                </a>
+            </div>
+            
+            
+    
+            <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-white font-semibold mb-3">Stay Connected</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 hover:text-orange-400">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2  hover:text-orange-400">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2  hover:text-orange-400">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2  hover:text-orange-400">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            
+        </div>
+    
+        <div class="max-w-7xl mx-auto mt-10 border-t border-gray-700 pt-5 flex flex-col md:flex-row items-center justify-between text-sm text-center md:text-left">
+            <p>© 2025 BlazeFix. All rights reserved.</p>
+            <div class="flex space-x-4 mt-2 md:mt-0">
+                <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    <!-- footer ends -->
+    <script src="/resources/Analytics.js"></script>
+</body>
+</html>
