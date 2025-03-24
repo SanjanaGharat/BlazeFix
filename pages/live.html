@@ -23,7 +23,19 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css">
 </head>
-<body style="margin: 0; padding: 0;">
+
+<body>
+    <style>
+        #map {
+    width: 100%;
+    height: calc(100vh - 60px); 
+    position: relative;
+    z-index: 1;
+    max-height: 600px; 
+    overflow: hidden;
+}
+
+    </style>
 
     <!-- Navbar -->
     <nav id="navbar">
@@ -172,5 +184,88 @@
             addMarker(lat, lng);
         });
     </script>
+
+            <!-- footer starts -->
+<footer class="bg-gray-900 text-gray-300 py-10 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+        <div class="flex flex-col items-center md:items-start">
+            <div class="flex items-center space-x-2">
+                <a href="#" id="logo" class="text-orange-500 text-2xl flex items-center ">
+                    <i id="fire-icon" class="fa-thin fa-fire-flame-curved"></i>
+                    <span class="text-xl font-semibold text-white">BlazeFix</span>
+                </a>
+            </div>
+            <p class="mt-2 text-sm max-w-xs">Advanced forest fire prediction and prevention through AI technology.</p>
+           
+        </div>
+        
+        <div class="flex flex-col items-center md:items-start">
+            <h3 class="text-white font-semibold mb-3">Quick Links</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="/" class="hover:text-white">Home</a></li>
+                <li><a href="Prediction.html" class="hover:text-white">Predictions</a></li>
+                <li><a href="live.html" class="hover:text-white">Live Map</a></li>
+                <li><a href="Analytics.html" class="hover:text-white">Analytics</a></li>
+                <li><a href="about.html" class="hover:text-white">About</a></li>
+                <li><a href="contact.html" class="hover:text-white">Contact us</a></li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col items-center md:items-start">
+            <h3 class="text-white font-semibold mb-3">Contact Us</h3>
+            <p class="text-sm text-gray-400">
+                VIT Bhopal University<br>
+                Bhopal-Indore Highway, Kothrikalan,<br>
+                Sehore, Madhya Pradesh – 466114, India
+            </p>
+            <a href="https://vitbhopal.ac.in/" target="_blank" class="text-orange-400 hover:text-white mt-2 text-sm">
+                Visit VIT Bhopal Website
+            </a>
+        </div>
+        
+        
+
+        <div class="flex flex-col items-center md:items-start">
+            <h3 class="text-white font-semibold mb-3">Stay Connected</h3>
+            <ul class="space-y-2 text-sm">
+                <li>
+                    <a href="#" class="flex items-center space-x-2 hover:text-orange-400">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2  hover:text-orange-400">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2  hover:text-orange-400">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center space-x-2  hover:text-orange-400">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-10 border-t border-gray-700 pt-5 flex flex-col md:flex-row items-center justify-between text-sm text-center md:text-left">
+        <p>© 2025 BlazeFix. All rights reserved.</p>
+        <div class="flex space-x-4 mt-2 md:mt-0">
+            <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-white">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+<!-- footer ends -->
 </body>
 </html>
