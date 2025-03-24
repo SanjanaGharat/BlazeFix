@@ -10,7 +10,7 @@ const riskLevelChart = new Chart(riskLevelCtx, {
         labels: ['Low', 'Medium', 'High'],
         datasets: [{
             label: 'Risk Level',
-            data: [0, 0, 0], // Initial data
+            data: [0, 0, 0], 
             backgroundColor: [
                 'rgba(75, 192, 192, 0.2)',
                 'rgba(255, 206, 86, 0.2)',
@@ -64,7 +64,7 @@ document.getElementById('fetchLocationData').addEventListener('click', function 
                 document.getElementById('windSpeed').value = Math.round(weatherData.current.wind_kph); // Wind speed in km/h
 
                 // Generate a random Vegetation Index (NDVI) between 0 and 100
-                const randomVegetation = Math.floor(Math.random() * 101); // Random integer between 0 and 100
+                const randomVegetation = Math.floor(Math.random() * 101); 
                 document.getElementById('vegetation').value = randomVegetation;
 
                 // Fetch location name using OpenCage Geocoding API
