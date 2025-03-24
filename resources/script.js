@@ -83,7 +83,7 @@ async function fetchPlaceName(latitude, longitude) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        const placeName = data.results[0].formatted; // Get the formatted place name
+        const placeName = data.results[0].formatted; 
         return placeName;
     } catch (error) {
         console.error('Error fetching place name:', error);
